@@ -67,9 +67,10 @@ You can determine the number of entries in a Map using the size property:
 console.log(myMap.size); // Outputs: 1 */
 
 /***************But in the simplest sploution: */
-for (let i=0; i < tstArr.length ; i++) {
-  for (let j=0 ; i < tstArr.length ; j++){
-    if (tstArr[i]+tstArr[j] === number){
+
+for (let i=0; i < tstArr.length-1 ; i++) {
+  for (let j=i+1 ; i < tstArr.length-1 ; j++){
+    if (tstArr[i]+tstArr[j] === targetNumber){
       console.log(i,j);
     }
   }
