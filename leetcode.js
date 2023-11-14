@@ -4,7 +4,7 @@
 // const tstArr = [1,3,7,9,2]
 // const targetNumber = 10;
 // Should return 0,3 and 1,2 
-const tstArr = [1, 3, 7, 9, 2];
+const tstArr = [1, 3, 8, 9, 2];
 const targetNumber = 10;
 
 function findPairsWithSum(arr, target) {
@@ -68,10 +68,29 @@ console.log(myMap.size); // Outputs: 1 */
 
 /***************But in the simplest sploution: */
 
-for (let i=0; i < tstArr.length-1 ; i++) {
-  for (let j=i+1 ; i < tstArr.length-1 ; j++){
+for (let i=0; i < tstArr.length ; i++) {
+  for (let j=i+1 ; i < tstArr.length ; j++){
     if (tstArr[i]+tstArr[j] === targetNumber){
       console.log(i,j);
+    } else {
+      return null;
     }
   }
 }
+
+// other solution :
+const findTwoSum = function(nums, target){
+  const numsMap ={};
+  for (let i=0 ; i<nums.length ; i++){
+    const currentMapVal = numsMap[nums[i]];
+    if(currentMapVal >= 0){
+      return [currentMapVal, i];
+    } else {
+      const numberToFind = target - nums[i];
+      numsMap[numberToFind] = i;
+    }
+  }
+  return null;
+}
+
+console.log(findTwoSum(tstArr, targetNumber));
