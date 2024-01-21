@@ -68,10 +68,10 @@ console.log(myMap.size); // Outputs: 1 */
 
 /***************But in the simplest sploution: */
 
-for (let i=0; i < tstArr.length ; i++) {
-  for (let j=i+1 ; i < tstArr.length ; j++){
-    if (tstArr[i]+tstArr[j] === targetNumber){
-      console.log(i,j);
+for (let i = 0; i < tstArr.length; i++) {
+  for (let j = i + 1; i < tstArr.length; j++) {
+    if (tstArr[i] + tstArr[j] === targetNumber) {
+      console.log(i, j);
     } else {
       return null;
     }
@@ -79,11 +79,11 @@ for (let i=0; i < tstArr.length ; i++) {
 }
 
 // other solution :
-const findTwoSum = function(nums, target){
-  const numsMap ={};
-  for (let i=0 ; i<nums.length ; i++){
+const findTwoSum = function(nums, target) {
+  const numsMap = {};
+  for (let i = 0; i < nums.length; i++) {
     const currentMapVal = numsMap[nums[i]];
-    if(currentMapVal >= 0){
+    if (currentMapVal >= 0) {
       return [currentMapVal, i];
     } else {
       const numberToFind = target - nums[i];
@@ -91,6 +91,6 @@ const findTwoSum = function(nums, target){
     }
   }
   return null;
-}
+};
 
 console.log(findTwoSum(tstArr, targetNumber));
