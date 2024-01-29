@@ -36,7 +36,6 @@ const getTrappedWaterBr = function(heights) {
 console.log("first:",getTrappedWaterBr(testArray1));
 // The code obove has a time complexity of O(n^2) due to the nested while loops
 
-
 // Opptimised code : two pointers:
 
 const getTrappedWaterOp = function(heights) {
